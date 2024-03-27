@@ -1,0 +1,838 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap');
+
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #0c9c69;
+  --bg-color: #101415;
+  --text-color: #fff;
+  --line-color: #fa5a57;
+  --blk: #121212;
+  --gry: #1f1f1f;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.transparent-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  background-color: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 20px;
+  z-index: 1000;
+  backdrop-filter: blur(10px); /* Apply blur effect */
+}
+
+/* Adjustments for the blur overlay */
+.transparent-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensure the gradient is behind the content */
+  box-shadow: 0 0 12px 0px black;
+}
+
+.transparent-header .logo h4 {
+  font-size: 1.4rem;
+  margin-left: 10vw;
+  color: var(--text-color);
+}
+
+.transparent-header .logo a {
+  text-decoration: none; /* Remove underline */
+}
+
+
+.transparent-header nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  margin-right: 1.8rem;
+}
+
+.transparent-header nav ul li {
+  margin-left: 20px;
+}
+
+.transparent-header nav ul li:first-child {
+  margin-left: 0;
+}
+
+.transparent-header nav ul li:first-child a {
+  margin-left: 2.8rem; /* Adjust margin as needed */
+}
+
+.transparent-header nav ul li a {
+  font-size: 1.2rem; /* Adjust font size as needed */
+  font-weight: 400;
+  color: var(--text-color);
+  text-decoration: none;
+  position: relative;
+  margin-left: 1.4rem;
+}
+
+.transparent-header nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 4px;
+  bottom: -5px;
+  left: 50%; /* Initial position at the center */
+  background-color: var(--main-color);
+  border-radius: 10px;
+  transition: width 0.3s ease, left 0.3s ease; /* Add left property to transition */
+}
+
+.transparent-header nav ul li a.active::after {
+  width: 100%;
+  left: 0;
+}
+
+.transparent-header nav ul li a:hover::after {
+  width: 100%;
+  left: 0; /* Expand from center to sides */
+}
+
+#menu-icon {
+  display: none;
+
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 768px) {
+  .transparent-header {
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .transparent-header .logo h1 {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+
+  .transparent-header nav ul li a {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+
+  /* Show the menu icon and style it */
+  #menu-icon {
+    display: block;
+    width: 1.5rem; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer;
+    margin-right: 1.4rem;
+    filter: invert(1);
+  }
+
+  /* Ensure the menu icon stays on the same line as the logo */
+  .transparent-header .logo {
+    flex: 1;
+  }
+
+  /* Hide the navigation links when menu icon is shown */
+  .transparent-header nav ul {
+    display: none;
+  }
+
+  /* Show the navigation links as a column when menu icon is clicked */
+  .transparent-header nav ul.show {
+    display: flex;
+    flex-direction: column;
+    background-color: none;
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    position: absolute;
+    top: 100%; /* Position below the header */
+    left: 0;
+    width: 100%;
+    padding: 10px; /* Adjust padding as needed */
+    z-index: 999; /* Ensure it appears above other content */
+  }
+
+
+  .transparent-header nav ul.show li {
+    margin-bottom: 10px; /* Add space between each link */
+  }
+
+  .transparent-header nav ul.show li a {
+    color: var(--text-color); /* Use text color variable */
+    text-decoration: none;
+  }
+}
+
+
+
+/* -------HOME SECTION------ */
+
+
+
+
+
+
+.home-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align items to the start (left) */
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.5)), url("../images/bgphoto(2).jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 13vw; /* Adjust margin left as needed */
+  z-index: 999;
+  }
+
+  .content-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+
+
+
+/* Adjustments for the gradient overlay */
+.home-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%; /* Adjust the width of the gradient */
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, .95), rgba(0, 0, 0, 0)); /* Linear gradient from left to transparent */
+  z-index: 1; /* Ensure the gradient is on top of the background image */
+}
+
+
+/* Adjustments for the text alignment in the home section */
+#home .textfor {
+  text-align: left; /* Align the text to the left */
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the start (left) */
+  justify-content: flex-start;
+  z-index: 1;
+  line-height: 2rem;
+
+}
+
+#home .intro-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 2.4rem;
+  color: var(--text-color);
+  margin-bottom: .3em;
+  text-align: left; /* Align the text to the left */
+  overflow: hidden;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  #home .intro-text {
+    font-size: 2rem;
+  }
+  
+  /* Additional adjustments for even smaller screens if needed */
+  @media screen and (max-width: 480px) {
+    #home .intro-text {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.description {
+  max-width: 55vw; /* Initial max-width */
+  min-width: 10vw; /* Minimum width */
+  margin-top: .5rem;
+  text-align: left; /* Center the description text */
+  overflow: hidden;
+  font-weight: 300;
+}
+
+@media screen and (min-width: 768px) {
+  .description {
+    max-width: 30vw; /* Adjust max-width for larger screens */
+    min-width: 20vw;
+  }
+}
+
+.charles-adrian {
+  color: var(--main-color);
+  font-weight: 600;
+}
+
+.auto-text {
+  color: var(--main-color);
+  text-shadow: 0px 0px 10px var(--main-color);
+  font-weight: 600;
+
+}
+
+.home-section .automation {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-top: .1rem;
+}
+
+.home-section h3 {
+  font-size: 2.6rem;
+  font-weight: 500;
+}
+
+.home-section h3:nth-of-type(2) {
+  margin-bottom: 2rem;
+}
+
+
+
+.home-section .social-icons {
+  display: flex;
+  justify-content: flex-start; /* Align items to the start (left) */
+  align-items: center;
+  z-index: 999;
+  
+}
+
+
+.social-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+}
+
+
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.7rem; /* Adjust width */
+  height: 2.7rem; /* Adjust height */
+  background: transparent;
+  border: .13rem solid var(--main-color); /* Adjust border thickness */
+  border-radius: 50%;
+  font-size: 1.3rem; /* Adjust font size */
+  color: var(--main-color);
+  margin-top: .5rem;
+  margin-right: 2rem; /* Adjust margin-right for space between icons */
+  transition: all 0.3s ease;
+  text-decoration: none;
+  
+}
+
+.social-icons a:hover {
+  transform: scale(1.1); /* Scale the icon on hover */
+  box-shadow: 0 0 1.2rem var(--main-color); /* Add a subtle shadow on hover */
+  outline: none;
+  background-color: var(--main-color);
+  color: var(--text-color);
+  z-index: 999;
+  
+}
+
+.social-icons a:focus {
+  outline: none; /* Remove the outline on focus */
+}
+
+.social-icons a:last-child {
+  margin-right: 0; /* Remove margin for the last icon */
+}
+
+
+
+
+/* ------ABOUT SECTION------ */
+
+
+
+
+@keyframes wave {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(1.2);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .gif-container {
+    width: 100%; /* Full width on smaller screens */
+    float: none; /* Remove float */
+    text-align: center; /* Center align the GIF */
+    margin-top: 30px; /* Add margin to the top */
+  }
+}
+
+  .about-text {
+    margin: 30px; /* Add margin to the text container */
+  }
+
+
+#downloadButton {
+  background-color: transparent;
+  color: var(--main-color);
+  padding: 10px 20px;
+  border: .13rem solid var(--main-color);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: .7rem;
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 1rem;
+  max-width: 13rem; /* Maximum width */
+  width: 100%; /* Take full width of its container */
+  box-sizing: border-box; /* Include padding and border in the width */
+  z-index: 1;
+
+}
+
+/* Adjust the button size for smaller screens */
+@media screen and (max-width: 768px) {
+  #downloadButton {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+/* Additional adjustments for even smaller screens if needed */
+@media screen and (max-width: 480px) {
+  #downloadButton {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}
+
+
+
+
+#downloadButton:hover {
+  background-color: var(--main-color);
+  transform: scale(1.1); /* Scale the icon on hover */
+  box-shadow: 0 0 1.2rem var(--main-color); /* Add a subtle shadow on hover */
+  outline: none;
+  background-color: var(--main-color);
+  color: var(--text-color);
+  transform: scale(1.05); /* Scale the button slightly larger on hover */
+}
+
+#about {
+  padding: 50px 0;
+  background-color: var(--bg-color);
+}
+
+
+.about-title h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%; /* Set the width to 100% to cover the width of the text */
+  height: 2px;
+  background-color: var(--main-color);
+  border-radius: 5px;
+  animation: wave 2s infinite alternate; /* Apply the animation */
+}
+
+.about-description,
+.about-interests,
+.about-achievement {
+  margin-bottom: 15px;
+  display: grid;
+  justify-content: flex-start;
+  place-items: left; /* Center both horizontally and vertically */
+}
+
+.about-description p,
+.about-interests p,
+.about-achievement p {
+  color: var(--text-color);
+  line-height: 1.7;
+  margin-left: 10vw;
+  text-align: justify;
+  margin-right: 5vw;
+  max-width: 35rem;
+}
+
+.about-content {
+  display: flex;
+}
+
+.aboutword {
+  flex: 1; /* Allow paragraphs to grow and shrink */
+}
+
+.aetherpng {
+  flex: 0 0 auto; /* Prevent the image from growing or shrinking */
+  margin-right: 5vw; /* Add space between the paragraphs and the image */
+}
+
+.aetherpng img {
+  max-width: 100%; /* Ensure the image doesn't exceed its container */
+  animation: float 4s ease-in-out infinite;
+  margin-top: 10vh;
+}
+
+/* Keyframes for the floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .about-content {
+    flex-direction: column; /* Change flex direction to column on smaller screens */
+  }
+
+  .aetherpng {
+    margin-right: 5vw; /* Remove margin on smaller screens */
+    margin-top: 20px; /* Add space between the paragraphs and the image */
+  }
+}
+
+
+
+
+/* Adjust the button size for smaller screens */
+@media screen and (max-width: 768px) {
+  #abouthtml {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+/* Additional adjustments for even smaller screens if needed */
+@media screen and (max-width: 480px) {
+  #abouthtml {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}
+
+.abouthtml {
+  background-color: transparent;
+  color: var(--main-color);
+  padding: 10px 20px;
+  border: .13rem solid var(--main-color);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: .7rem;
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 1rem;
+  max-width: 10rem; /* Maximum width */
+  width: 100%; /* Take full width of its container */
+  box-sizing: border-box; /* Include padding and border in the width */
+  z-index: 1;
+  margin-top: 20px;
+}
+
+.aboutarrange {
+  margin-left: 10vw;
+}
+
+.abouthtml:hover {
+  background-color: var(--main-color);
+  transform: scale(1.1); /* Scale the icon on hover */
+  box-shadow: 0 0 1.2rem var(--main-color); /* Add a subtle shadow on hover */
+  outline: none;
+  color: var(--text-color);
+  transform: scale(1.05); /* Scale the button slightly larger on hover */
+}
+
+
+
+.about-description h3{
+  color: var(--text-color);
+  font-size: 2em;
+  margin-bottom: 25px;
+  place-items: left;
+  margin-left: 10vw;
+}
+
+.about-description .meword {
+  color: var(--main-color);
+}
+
+.about-achievement p {
+  margin-bottom: 0;
+}
+
+
+.highlighted-words{
+font-weight: 600;
+color: var(--main-color);
+}
+
+
+.links {
+  position: relative;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.links::before {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px; /* Adjust the underline thickness */
+  bottom: 0;
+  left: 50%; /* Start from the center */
+  background-color: var(--main-color); /* Use main color variable */
+  transition: width 0.3s ease, left 0.3s ease; /* Add transition for underline width and left position */
+  transform: translateX(-50%), translateX(50%); /* Adjust to center the underline */
+}
+
+.links:hover::before {
+  width: 100%; /* Expand width to cover the link */
+  left: 0; /* Align to the left to expand from center to sides */
+}
+
+
+/* -------------SKILLS SECTION ---------------*/
+
+.skills h2 {
+  font-size: 3rem;
+  padding: 40px;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Change to flex-start to align items at the start */
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-bottom: 7rem;
+  margin: 0 5vw 0 5vw;
+}
+
+.skills-container .skills-box {
+  width: 20rem; /* Set a fixed width for consistent sizing */
+  height: 25rem;
+  background-color: var(--gry);
+  padding: 2rem 2rem 4rem;
+  border-radius: 2rem;
+  text-align: center;
+  border: 0.2rem solid var(--bg-color);
+  transition: 0.5s ease;
+  position: relative; /* Ensure relative positioning for the button */
+}
+
+.skills-container .skills-box:hover {
+  border-color: var(--main-color);
+  transform: scale(1.01);
+}
+
+.skills-box i {
+  font-size: 4rem;
+  color: var(--main-color);
+}
+
+.skills-box h3 {
+  margin-top: 1.2rem;
+  font-size: 1.6rem;
+}
+
+.skills-box p {
+  text-align: justify;
+  font-size: 0.8rem;
+  margin: 1rem 0 3rem;
+  margin-bottom: 3rem;
+}
+
+.skills-box a {
+  position: absolute; /* Position the button absolutely within the box */
+  bottom: 1rem; /* Adjust vertical position as needed */
+  left: 50%; /* Move the button to the center horizontally */
+  transform: translateX(-50%); /* Center the button */
+  background-color: transparent;
+  color: var(--main-color);
+  padding: 10px 20px;
+  border: .13rem solid var(--main-color);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 1rem;
+  max-width: 10rem; /* Maximum width */
+  width: fit-content; /* Take full width of its container */
+  text-decoration: none;
+  z-index: 1;
+  margin-bottom: 2rem;
+  
+}
+
+.skills-box{
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.skills h2{
+  display: grid;
+  place-items: center; /* This centers both horizontally and vertically */
+}
+
+/*---------CONTACT SECTION-------------*/
+
+
+#contact h2 {
+  display: grid;
+  place-items: center; /* This centers both horizontally and vertically */
+  font-size: 3rem;
+  padding: 40px;
+}
+
+#contact form {
+  max-width: 70rem;
+  margin: 1rem auto;
+  text-align: center;
+  margin-bottom: 3rem;
+  
+}
+
+#contact form .input-box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+
+#contact form .input-box input[type="text"],
+#contact form .input-box input[type="email"],
+#contact form .input-box input[type="tel"],
+#contact form .input-box input[type="text"] {
+  width: 48%;
+  padding: 1rem;
+  font-size: 1rem;
+  color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+  background: var(--bg-color);
+  border: 2.4px solid var(--main-color);
+  border-radius: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+#input-message {
+  width: 100%;
+  height: 200px;
+  border: 2px solid var(--main-color);
+  padding: 10px;
+  background-color: var(--bg-color);
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5em;
+  resize: none;
+  border-radius: 0.7rem;
+}
+
+
+#input-message::placeholder {
+  color: var(--text-color);
+  opacity: 0.3;
+}
+
+#contact form .btn {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  color: var(--text-color);
+  background-color: var(--main-color);
+  border: none;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+  margin: 30px 0 30px 0;
+}
+
+#contact form .btn:hover {
+  transform: scale(1.1); /* Scale the icon on hover */
+  box-shadow: 0 0 1.2rem var(--main-color); /* Add a subtle shadow on hover */
+  outline: none;
+  background-color: var(--main-color);
+  color: var(--text-color);
+}
+
+#hidden {
+  color: var(--bg-color);
+  text-decoration: line-through;
+}
+
+
+
+
+
+/*---------FOOTER SECTION---------*/
+
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem 9%;
+  background: none;
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  box-shadow: 0 0 12px 0px black;
+}
+
+.footer p {
+  font-size: 0.8rem;
+}
+
+.footer .footer-iconTop {
+  display: flex;
+}
+
+.footer-iconTop a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem;
+  background: var(--main-color);
+  border-radius: 0.8rem;
+  transition: 0.5s ease;
+}
+
+.footer-iconTop a:hover {
+  box-shadow: 0 0 1rem var(--main-color);
+}
+
+.footer-iconTop a i {
+  font-size: 1.5rem;
+  color: var(--bg-color);
+  text-decoration: none;
+}
