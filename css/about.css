@@ -35,7 +35,6 @@ body {
   @media screen and (max-width: 768px) {
     .about1 {
       flex-direction: column; /* Change flex direction to column */
-      padding: 50px 0;
     }
   
     .about-img {
@@ -50,8 +49,6 @@ body {
   }
   
   .about-img {
-    flex-basis: 40%;
-    margin-right: 50px;
     text-align: center;
   }
   
@@ -92,7 +89,7 @@ body {
   .about-img {
     flex-basis: 40%;
     text-align: center;
-    margin-left: 5vw;
+    margin: 0 5vw 0 5vw;
   }
   
   .about-img .img-container {
@@ -110,7 +107,6 @@ body {
     object-fit: cover;
     position: absolute;
     top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
   }
 
