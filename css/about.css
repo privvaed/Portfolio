@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap');
 
 :root {
     --main-color: #0c9c69;
@@ -15,6 +16,7 @@ body {
     margin: 0;
     padding: 0;
     background: var(--bg-color);
+    font-family: "Poppins", sans-serif;
   }
   
  /* Existing CSS styles... */
@@ -118,6 +120,7 @@ body {
   .about-content {
     margin-right: 5vw;
     margin-left: 5vw;
+
     
   }
   
@@ -145,6 +148,7 @@ body {
   
   .about-content strong {
     font-weight: 700;
+    color: var(--main-color);
   }
   
   .btn {
@@ -155,10 +159,11 @@ body {
     text-decoration: none;
     border-radius: 30px;
     transition: 0.3s;
+    transform: scale(0.9);
   }
   
   .btn:hover {
-    background: #fff;
-    color: #1a1a1a;
-    border: 1px solid #1a1a1a;
+    background: transparent;
+    color: var(--main-color);
+    border: 1.8px solid var(--main-color);
   }
