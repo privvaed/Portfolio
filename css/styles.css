@@ -472,7 +472,7 @@ body {
   line-height: 1.7;
   margin-left: 10vw;
   text-align: justify;
-  margin-right: 5vw;
+  margin-right: 10vw;
   max-width: 35rem;
 }
 
@@ -598,7 +598,7 @@ color: var(--main-color);
 
 .links {
   position: relative;
-  text-decoration: none;
+  text-decoration: underline;
   color: var(--text-color);
 }
 
@@ -757,6 +757,7 @@ color: var(--main-color);
   line-height: 1.5em;
   resize: none;
   border-radius: 0.7rem;
+  color: var(--text-color);
 }
 
 
@@ -812,7 +813,6 @@ color: var(--main-color);
 .footer p {
   font-size: 0.8rem;
 }
-
 .footer .footer-iconTop {
   display: flex;
 }
